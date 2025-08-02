@@ -3,96 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Food Menu</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Scan Menu QR</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .qr-container {
+            text-align: center;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <div class="container mx-auto px-4 py-8 max-w-3xl">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-indigo-700 mb-2">🍽️ Digital Menu</h1>
-            <p class="text-gray-600">Scan the QR code to view this menu on your phone</p>
-        </header>
-
-        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Today's Specials</h2>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Seasonal</span>
-                </div>
-
-                <!-- Menu Sections -->
-                <div class="space-y-6">
-                    <section>
-                        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🍤 Appetizers</h3>
-                        <ul class="space-y-3">
-                            <li class="flex justify-between">
-                                <span>Truffle Arancini</span>
-                                <span class="font-medium">$12</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Burrata Salad</span>
-                                <span class="font-medium">$14</span>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🍝 Main Courses</h3>
-                        <ul class="space-y-3">
-                            <li class="flex justify-between">
-                                <span>Lobster Risotto</span>
-                                <span class="font-medium">$28</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Filet Mignon</span>
-                                <span class="font-medium">$36</span>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <!-- Upload Section -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="p-6">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Upload Your Menu</h2>
-                <div class="flex items-center justify-center w-full">
-                    <label for="menu-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500">PNG, JPG, or PDF (MAX. 5MB)</p>
-                        </div>
-                        <input id="menu-upload" type="file" class="hidden" accept="image/*,.pdf" />
-                    </label>
-                </div>
-
-                <div id="upload-preview" class="mt-4 hidden">
-                    <h3 class="text-lg font-medium text-gray-700 mb-2">Your Menu Preview</h3>
-                    <div class="border rounded-lg p-4">
-                        <img id="preview-image" src="#" alt="Preview" class="max-w-full h-auto hidden">
-                        <iframe id="preview-pdf" src="#" class="hidden w-full h-96"></iframe>
-                    </div>
-                    <button id="replace-menu" class="mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">Replace Menu</button>
-                </div>
-            </div>
-        </div>
-
-        <footer class="mt-8 text-center text-gray-500 text-sm">
-            <p>Scan this QR code to access this menu anytime</p>
-            <div class="flex justify-center mt-2">
-                <!-- This would be replaced with your actual QR code -->
-                <div class="bg-white p-2 rounded">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yourusername.github.io/food-menu-qr/" alt="QR Code" class="w-32 h-32">
-                </div>
-            </div>
-        </footer>
+<body>
+    <div class="qr-container">
+        <h2>📲 Scan to View Menu</h2>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://AKeerthana1905.github.io/food-menu-qr/menu.html"
+             alt="Menu QR Code">
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
