@@ -3,141 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Food Menu</title>
+    <title>Gourmet Delights | Digital Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(0,0,0,0.85);
+            background-blend-mode: overlay;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .menu-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .category-header {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+        }
+
+        .food-image {
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .price-tag {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .text-primary {
+            color: #4f46e5;
+        }
+
+        .bg-primary {
+            background-color: #4f46e5;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <div class="container mx-auto px-4 py-8 max-w-3xl">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-indigo-700 mb-2">🍽️ Digital Menu</h1>
-            <p class="text-gray-600">Scan the QR code to view this menu on your phone</p>
+<body>
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <div class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full mb-4 shadow-lg">
+                <span class="text-sm font-semibold">FINE DINING EXPERIENCE</span>
+            </div>
+            <h1 class="text-5xl font-bold text-white mb-4">Gourmet Delights</h1>
+            <div class="flex justify-center items-center">
+                <div class="w-24 h-1 bg-indigo-400 mx-2"></div>
+                <i class="fas fa-utensils text-indigo-400 text-xl"></i>
+                <div class="w-24 h-1 bg-indigo-400 mx-2"></div>
+            </div>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">Discover our exquisite selection of culinary masterpieces crafted with passion and the finest ingredients</p>
         </header>
 
-        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Today's Specials</h2>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Seasonal</span>
+        <!-- Menu Sections -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Appetizers -->
+            <div class="menu-card rounded-2xl shadow-xl overflow-hidden">
+                <div class="category-header rounded-t-lg px-6 py-4">
+                    <h2 class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-shrimp mr-3"></i> Appetizers
+                    </h2>
                 </div>
-
-                <!-- Menu Sections -->
-                <!-- Menu Sections -->
-<div class="space-y-6">
-    <section>
-        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🍤 Appetizers</h3>
-        <ul class="space-y-3">
-            <li class="flex justify-between">
-                <span>Truffle Arancini</span>
-                <span class="font-medium">₹999</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Burrata Salad</span>
-                <span class="font-medium">₹799</span>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🍝 Main Courses</h3>
-        <ul class="space-y-3">
-            <li class="flex justify-between">
-                <span>Lobster Risotto</span>
-                <span class="font-medium">₹2299</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Filet Mignon</span>
-                <span class="font-medium">₹2999</span>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🍔 Junk Foods</h3>
-        <ul class="space-y-3">
-            <li class="flex justify-between">
-                <span>Double Cheese Burger</span>
-                <span class="font-medium">₹199</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Loaded Fries</span>
-                <span class="font-medium">₹149</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Spicy Chicken Wings</span>
-                <span class="font-medium">₹249</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Masala Nuggets</span>
-                <span class="font-medium">₹179</span>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h3 class="text-xl font-medium text-gray-700 mb-3 border-b pb-2">🧁 Bakes & Desserts</h3>
-        <ul class="space-y-3">
-            <li class="flex justify-between">
-                <span>Chocolate Lava Cake</span>
-                <span class="font-medium">₹149</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Red Velvet Cupcake</span>
-                <span class="font-medium">₹129</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Blueberry Cheesecake</span>
-                <span class="font-medium">₹199</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Classic Brownie</span>
-                <span class="font-medium">₹99</span>
-            </li>
-        </ul>
-    </section>
-</div>
-            </div>
-        </div>
-
-        <!-- Upload Section -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="p-6">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Upload Your Menu</h2>
-                <div class="flex items-center justify-center w-full">
-                    <label for="menu-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500">PNG, JPG, or PDF (MAX. 5MB)</p>
+                <div class="p-6">
+                    <!-- Item 1 -->
+                    <div class="mb-8 rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Truffle Arancini" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Truffle Arancini</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Crispy risotto balls with black truffle</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹999</span>
+                            </div>
                         </div>
-                        <input id="menu-upload" type="file" class="hidden" accept="image/*,.pdf" />
-                    </label>
-                </div>
-
-                <div id="upload-preview" class="mt-4 hidden">
-                    <h3 class="text-lg font-medium text-gray-700 mb-2">Your Menu Preview</h3>
-                    <div class="border rounded-lg p-4">
-                        <img id="preview-image" src="#" alt="Preview" class="max-w-full h-auto hidden">
-                        <iframe id="preview-pdf" src="#" class="hidden w-full h-96"></iframe>
                     </div>
-                    <button id="replace-menu" class="mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">Replace Menu</button>
+
+                    <!-- Item 2 -->
+                    <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Burrata Salad" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Burrata Salad</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Fresh burrata with heirloom tomatoes</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹799</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-card rounded-2xl shadow-xl overflow-hidden">
+                <div class="category-header rounded-t-lg px-6 py-4">
+                    <h2 class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-drumstick-bite mr-3"></i> Main Courses
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <!-- Item 1 -->
+                    <div class="mb-8 rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Lobster Risotto" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Lobster Risotto</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Creamy arborio rice with fresh lobster</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹2299</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Filet Mignon" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Filet Mignon</h3>
+                                    <p class="text-sm text-gray-600 mt-1">8oz tender beef with red wine reduction</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹2999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Junk Foods -->
+            <div class="menu-card rounded-2xl shadow-xl overflow-hidden">
+                <div class="category-header rounded-t-lg px-6 py-4">
+                    <h2 class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-hamburger mr-3"></i> Junk Foods
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <!-- Item 1 -->
+                    <div class="mb-8 rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Double Cheese Burger" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Double Cheese Burger</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Two beef patties with cheddar and special sauce</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹199</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Loaded Fries" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Loaded Fries</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Crispy fries with cheese, bacon, and jalapeños</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹149</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-card rounded-2xl shadow-xl overflow-hidden">
+                <div class="category-header rounded-t-lg px-6 py-4">
+                    <h2 class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-ice-cream mr-3"></i> Desserts
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <!-- Item 1 -->
+                    <div class="mb-8 rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Chocolate Lava Cake" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Chocolate Lava Cake</h3>
+                                    <p class="text-sm text-gray-600 mt-1">Warm chocolate cake with molten center</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹149</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-md">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                             alt="Blueberry Cheesecake" class="food-image w-full">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Blueberry Cheesecake</h3>
+                                    <p class="text-sm text-gray-600 mt-1">New York style with blueberry compote</p>
+                                </div>
+                                <span class="price-tag px-3 py-1 rounded-full text-sm font-bold">₹199</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <footer class="mt-8 text-center text-gray-500 text-sm">
-            <p>Scan this QR code to access this menu anytime</p>
-            <div class="flex justify-center mt-2">
-                <!-- This would be replaced with your actual QR code -->
-                <div class="bg-white p-2 rounded">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://AKeerthana1905.github.io/food-menu-qr/" alt="QR Code" class="w-32 h-32">
-                </div>
+        <!-- QR Code Section -->
+        <div class="text-center bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl max-w-md mx-auto backdrop-blur-sm">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Scan Our Digital Menu</h3>
+            <div class="bg-white p-4 rounded-lg inline-block mb-4">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://AKeerthana1905.github.io/food-menu-qr/"
+                     alt="QR Code" class="w-40 h-40">
             </div>
+            <p class="text-gray-600 mb-6">Scan to view this menu on your phone anytime</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-indigo-600 hover:text-indigo-800 text-lg">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 text-lg">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-pink-600 hover:text-pink-800 text-lg">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-300 text-sm">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-white"><i class="fas fa-phone-alt mr-1"></i> +91 9876543210</a>
+                <a href="#" class="hover:text-white"><i class="fas fa-map-marker-alt mr-1"></i> Bengaluru</a>
+                <a href="#" class="hover:text-white"><i class="fas fa-clock mr-1"></i> 11AM-11PM</a>
+            </div>
+            <p>© 2024 Gourmet Delights. All rights reserved.</p>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
