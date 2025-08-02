@@ -1,0 +1,14 @@
+/* Custom styles can be added here */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animation for upload area */
+label[for="menu-upload"] {
+    transition: all 0.3s ease;
+}
+
+label[for="menu-upload"]:hover {
+    border-color: #6366f1;
+    background-color: #f0f0ff;
+}
