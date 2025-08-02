@@ -14,11 +14,11 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Password validation regex
 PASSWORD_PATTERN = r'^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
 
+# ------------------- ROUTES -------------------
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
+    return render_template('login.html')  # Login is now the homepage
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,22 +28,20 @@ def login():
 
         # Validate password
         if not re.match(PASSWORD_PATTERN, password):
-            flash("Password must have 8 characters, 1 uppercase, 1 number, 1 special character.")
+            flash("Password must have at least 8 characters, 1 uppercase letter, 1 number, and 1 special character.")
             return redirect(url_for('login'))
 
-        # If password valid, login success
+        # Successful login
         session['user'] = username
         return redirect(url_for('upload_page'))
 
     return render_template('login.html')
-
 
 @app.route('/upload_page')
 def upload_page():
     if 'user' not in session:
         return redirect(url_for('login'))
     return render_template('menu.html')
-
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -65,6 +63,11 @@ def upload_file():
 
     return {'success': False}
 
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('login'))
 
+# ------------------- MAIN -------------------
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
